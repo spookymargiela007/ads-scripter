@@ -77,24 +77,7 @@ const callGenerateEndpoint = async () => {
       </div>
     </div>
     <div className="output-content">
-      {apiOutput
-        .split('\n')
-        .map((line, index) => {
-          if (line.startsWith('```')) {
-            return (
-              <pre key={index}>
-                <code className="code-editor">
-                  {apiOutput
-                    .split('\n')
-                    .slice(index + 1, apiOutput.split('\n').indexOf('```', index + 1))
-                    .join('\n')}
-                </code>
-              </pre>
-            );
-          } else {
-            return <p key={index}>{line}</p>;
-          }
-        })}
+    <p>{apiOutput}</p>
     </div>
   </div>
 )}
